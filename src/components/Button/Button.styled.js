@@ -15,9 +15,12 @@ export const StyledButton = styled('button')`
   &:hover,
   &:focus {
     cursor: pointer;
+
+    transform: scale(1.02);
+  }
+  &:active {
     color: #fff;
     background-color: rgba(93, 81, 81, 0.5);
-    transform: scale(1.02);
   }
   &:not(:last-child) {
     margin-right: 16px;
