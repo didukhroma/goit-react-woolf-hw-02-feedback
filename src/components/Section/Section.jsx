@@ -1,9 +1,14 @@
+import Container from 'components/Container';
+import { StyledSection } from './Section.styled';
+
 function Section({ title, children }) {
   return (
-    <section>
-      <h2>{title}</h2>
-      {children}
-    </section>
+    <StyledSection>
+      <Container>
+        <h2>{title}</h2>
+        {children}
+      </Container>
+    </StyledSection>
   );
 }
 

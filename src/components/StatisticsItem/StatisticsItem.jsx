@@ -1,14 +1,16 @@
 import { capitalize } from 'helpers/capitalize';
+import { StyledLi, StyledItem } from './StatisticsItem.styled';
 
 function StatisticsItem({ name, value, symbol }) {
   const title = capitalize(name);
   return (
-    <li>
+    <StyledLi>
       <p>
-        <span>{title}</span>:<span>{value}</span>
-        {symbol && symbol}
+        <StyledItem>{`${title}:`}</StyledItem>
+        <span>{value}</span>
+        {symbol}
       </p>
-    </li>
+    </StyledLi>
   );
 }
 

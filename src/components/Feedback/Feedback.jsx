@@ -3,6 +3,7 @@ import { Component } from 'react';
 import Section from 'components/Section';
 import Statistics from 'components/Statistics';
 import FeedbackOptions from 'components/FeedbackOptions';
+import { StyledMainTitle } from './Feedback.styled';
 
 class Feedback extends Component {
   static defaultProps = {
@@ -41,7 +42,7 @@ class Feedback extends Component {
 
     return (
       <>
-        <h1>Cafe Expresso</h1>
+        <StyledMainTitle>Cafe Expresso</StyledMainTitle>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}

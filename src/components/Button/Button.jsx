@@ -1,4 +1,5 @@
 import { capitalize } from 'helpers/capitalize';
+import { StyledButton } from './Button.styled';
 
 function Button({ text, cbOnClick }) {
   const title = capitalize(text);
@@ -7,7 +8,7 @@ function Button({ text, cbOnClick }) {
     cbOnClick(text);
   };
 
-  return <button onClick={handleClick}>{title}</button>;
+  return <StyledButton onClick={handleClick}>{title}</StyledButton>;
 }
 
 export default Button;
