@@ -1,15 +1,20 @@
-import Notification from 'components/Notification';
-import StatisticsList from 'components/StatisticksList';
+import StatisticsItem from 'components/StatisticsItem';
 
 function Statistics(props) {
+  const keys = Object.keys(props);
+  const text = 'positive feedback';
+  const symbol = <span>&#37;</span>;
   return (
-    <>
-      {!props.total ? (
-        <Notification message="There is no feedback" />
-      ) : (
-        <StatisticsList {...props} />
-      )}
-    </>
+    <ul>
+      {keys.map((el, idx, arr) => (
+        <StatisticsItem
+          key={el}
+          name={arr.length - 1 !== idx ? el : text}
+          value={props[el]}
+          symbol={arr.length - 1 === idx && symbol}
+        />
+      ))}
+    </ul>
   );
 }
 

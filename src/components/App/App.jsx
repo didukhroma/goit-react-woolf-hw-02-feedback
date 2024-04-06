@@ -5,6 +5,7 @@ import Section from 'components/Section';
 import Statistics from 'components/Statistics';
 
 import { StyledMainTitle } from './App.styled';
+import Notification from 'components/Notification';
 
 export default class App extends Component {
   static defaultProps = {
@@ -19,7 +20,9 @@ export default class App extends Component {
   };
 
   leaveFeedback = propName => {
-    this.setState(prevState => ({ [propName]: prevState[propName] + 1 }));
+    this.setState(prevState => ({
+      [propName]: prevState[propName] + this.props.step,
+    }));
   };
 
   countTotalFeedback = () => {
@@ -48,11 +51,14 @@ export default class App extends Component {
         </Section>
 
         <Section title="Statistics">
-          <Statistics
-            {...this.state}
-            total={total}
-            positivePercentage={positivePercentage}
-          />
+          {total ? (
+            <Statistics
+              {...this.state}
+              positivePercentage={positivePercentage}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
         </Section>
       </>
     );
